@@ -1,0 +1,1258 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>JavaScript Examples</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="../css/bootstrap.min.css" type="text/css">
+
+    <!-- Custom Fonts -->
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="../font-awesome/css/font-awesome.min.css" type="text/css">
+
+    <!-- Plugin CSS -->
+    <link rel="stylesheet" href="../css/magnific-popup.css" type="text/css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../css/creative.css" type="text/css">
+
+<!-- Add prettify column numbering -->
+  <style>
+    .prettyprint ol.linenums > li { list-style-type: decimal; }
+  </style>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+      <!-- Google Code Prettify -->
+   <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js?lang=css&amp;skin=desert"></script>
+</head>
+<body id="page-top" >
+  <nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand page-scroll" href="#page-top" >JavaScript</a>
+      </div>
+
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav navbar-right">
+          <li>
+              <a class="page-scroll" href="../index.html">Home</a>
+          </li>
+          <li>
+              <a class="page-scroll" href="aboutMe.html">About</a>
+          </li>
+          <li>
+              <a class="page-scroll" href="portfolio.html">Portfolio</a>
+          </li>
+          <li>
+              <a class="page-scroll" href="../index.html#contact">Contact</a>
+          </li>
+        </ul>
+      </div>
+      <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container-fluid -->
+  </nav>
+<section class="port">
+  <div  class="no-padding" id="portfolio">
+
+    <!-- =================================
+    = BEGIN - STRING METHODS             =
+    ================================== -->
+    <div class="container" style="background-color: #d9d9d9; color: black; border: 10px solid #f05f40 ">
+      <h2 style="text-transform: uppercase">String Methods</h2>
+      <!-- Begin - String method: chartAt() == -->
+      <br>
+      <!-- Column 1 - Description-->
+      <div class="row" style="text-align: left">
+        <div class="col-md-3" >
+          <h3>Description</h3>
+          <br>
+          <h4 style="white-space: pre">Deliverables:</h4>
+          <h4 style="white-space: pre">   String Method:  chartAt()</h4>
+          <h4 style="white-space: pre">   HTML Events:  onclick</h4>
+          <h4 style="white-space: pre">   Conditionals:  if / else</h4>
+          <h4 style="white-space: pre">   Math:  Modulo</h4>
+        </div>
+        <!-- Column 2 - Code Section -->
+        <div class="col-md-6" style="text-align: left" >
+          <h3>Code</h3>
+          <br>
+          <pre class="prettyprint linenums" >
+//Display character at index # based on user input
+function charLocation(){
+  var inputString = document.getElementById('userInput1').value;
+  var charIndex = Number(document.getElementById('userInput2').value);
+
+  //Check for bad user input
+  if (isNaN(charIndex)
+              || charIndex % 1 !== 0
+              || charIndex < 0
+              || charIndex.length < 1
+              || charIndex > inputString.length-1){
+    alert("Please enter a valid index ");
+  } else {
+      var result = inputString.charAt(charIndex);
+      document.getElementById('calcResult').value=result;
+  }
+}
+          </pre>
+        </div>
+        <!-- Column 3 - Display inputs -->
+        <form class="form-horizontal">
+          <div class="form-group">
+            <div class="col-md-3" >
+              <h3>Example</h3>
+              <br>
+              <div class="row" >
+                <label for="charUserInput1" class="col-md-6" >Input String:</label>
+                  <div class="col-md-6" >
+                    <input type="input" class="form-control" id="charUserInput1" style="text-align: center; width: 110px">
+                  </div>
+              </div>
+              <div class="row" >
+                <label for="charUserInput2" class="col-md-6" >String Index #:</label>
+                  <div class="col-md-6" >
+                    <input type="input" class="form-control" id="charUserInput2" style="text-align: center; width: 110px">
+                  </div>
+              </div>
+              <div class="row">
+                <label for="charResult" class="col-md-6">Char @ Index #:</label>
+                <div class="col-md-6  ">
+                  <input type="input" class="form-control" id="charResult" style="text-align: center; width: 110px; ">
+                </div>
+              </div>
+              <br>
+              <div class="row">
+                <div class="col-md-6" >
+                  <button type="button" class="btn btn-primary" onclick="charLocation()">Calculate</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+      <hr style="max-width: 1000px">
+      <br>
+      <!-- End String method: chartAt() == -->
+
+      <!-- Begin String method: concat()== -->
+      <br>
+      <!-- Column 1 - Description -->
+      <div class="row" style="text-align: left">
+        <div class="col-md-3" >
+          <br>
+          <h4 style="white-space: pre">Deliverables:</h4>
+          <h4 style="white-space: pre">   String Method: concat()</h4>
+        </div>
+        <!-- Column 2 - Code Section -->
+        <div class="col-md-6" style="text-align: left" >
+          <br>
+          <pre class="prettyprint linenums" >
+//Concatenate two strings based on user input
+function concatenate(){
+  var inputString1 = document.getElementById('userInput1').value;
+  var inputString2 = document.getElementById('userInput2').value;
+  var result = inputString1.concat(inputString2);
+
+  document.getElementById('concatResult').value=result;
+
+}
+          </pre>
+        </div>
+        <!-- Column 3 - Display input section -->
+        <form class="form-horizontal">
+          <div class="form-group">
+            <div class="col-md-3" >
+              <br>
+              <div class="row" >
+                <label for="userInput1" class="col-md-6" >Input String 1:</label>
+                  <div class="col-md-6" >
+                    <input type="input" class="form-control" id="userInput1" style="text-align: center; width: 100px">
+                  </div>
+              </div>
+              <div class="row" >
+                <label for="userInput2" class="col-md-6" >String String 2:</label>
+                  <div class="col-md-6" >
+                    <input type="input" class="form-control" id="userInput2" style="text-align: center; width: 100px">
+                  </div>
+              </div>
+              <div class="row">
+                <label for="concatResult" class="col-md-6">Concatenation:</label>
+                <div class="col-md-6  ">
+                  <input type="input" class="form-control" id="concatResult" style="text-align: center; width: 100px; ">
+                </div>
+              </div>
+              <br>
+              <div class="row">
+                <div class="col-md-6" >
+                  <button type="button" class="btn btn-primary" onclick="concatenate()">Concatenate</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+      <hr style="max-width: 1000px">
+      <br>
+      <!-- End String method: concat() == -->
+
+      <!-- Begin String Method: includes() == -->
+      <br>
+      <!-- Column 1 - Description -->
+      <div class="row" style="text-align: left">
+        <div class="col-md-3" >
+          <br>
+          <h4 style="white-space: pre">Deliverables:</h4>
+          <h4 style="white-space: pre">   String Method: includes()</h4>
+        </div>
+        <!-- Column 2 - Code Section -->
+        <div class="col-md-6" style="text-align: left" >
+          <br>
+          <pre class="prettyprint linenums" >
+//Determine if String 2 is Subset of String 1
+function includesMethod(){
+  //Simplified var naming convention
+  var includeInput1 = document.getElementById('includeInput1').value;
+  var includeInput2 = document.getElementById('includeInput2').value;
+  var includeResult;
+  if (includeInput1.includes(includeInput2)){
+      includeResult = true;
+  } else {
+      includeResult = false;
+  }
+  document.getElementById('includeResult').value=includeResult;
+}
+          </pre>
+        </div>
+        <!-- Column 3 - Display input section -->
+        <form class="form-horizontal">
+          <div class="form-group">
+            <div class="col-md-3" >
+              <br>
+              <div class="row" >
+                <label for="includeInput1" class="col-md-6" >String 1:</label>
+                  <div class="col-md-4" >
+                    <input type="input" class="form-control" id="includeInput1" style="text-align: center; width: 100px">
+                  </div>
+              </div>
+              <div class="row" >
+                <label for="includeInput2" class="col-md-6" >String 2:</label>
+                  <div class="col-md-4" >
+                    <input type="input" class="form-control" id="includeInput2" style="text-align: center; width: 100px">
+                  </div>
+              </div>
+              <div class="row">
+                <label for="includeResult" class="col-md-6">String 2 Subset?</label>
+                <div class="col-md-4  ">
+                  <input type="input" class="form-control" id="includeResult" style="text-align: center; width: 100px; ">
+                </div>
+              </div>
+              <br>
+              <div class="row">
+                <div class="col-md-6" >
+                  <button type="button" class="btn btn-primary" onclick="includesMethod()">Calculate</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+      <hr style="max-width: 1000px">
+      <br>
+      <!-- End String Method: includes() == -->
+
+      <!-- Begin - String method: indexOf == -->
+      <br>
+      <!-- Column 1 - Description -->
+      <div class="row" style="text-align: left">
+        <div class="col-md-3" >
+          <!-- <h3>Description</h3> -->
+          <br>
+          <h4 style="white-space: pre">Deliverables:</h4>
+          <h4 style="white-space: pre">   String Methods: indexOf()</h4>
+        </div>
+        <!-- Column 2 - Code Section -->
+        <div class="col-md-6" style="text-align: left" >
+         <!--  <h3>Code</h3> -->
+          <br>
+          <pre class="prettyprint linenums" >
+//Find Index of Substring
+function indexOfMethod(){
+  //Simplified var naming convention
+  var indexString = "Learning JavaScript is Fun!";
+  var indexInput = document.getElementById('indexInput').value;
+  var indexLocation = indexString.indexOf(indexInput);
+
+  document.getElementById('indexResult').value=indexLocation;
+}
+          </pre>
+        </div>
+        <!-- Column 3 - Display input section -->
+        <form class="form-horizontal">
+          <div class="form-group">
+            <div class="col-md-3" >
+              <br>
+              <div class="row" >
+                <label for="indexInput1" class="col-md-12" >String = "Learning JavaScript is Fun!"</label>
+              </div>
+              <br>
+              <div class="row" >
+                <label for="indexInput" class="col-md-6" >Find Substring:</label>
+                  <div class="col-md-4" >
+                    <input type="input" class="form-control" id="indexInput" style="text-align: center; width: 100px">
+                  </div>
+              </div>
+              <div class="row">
+                <label for="indexResult" class="col-md-6">Index Location:</label>
+                <div class="col-md-4  ">
+                  <input type="input" class="form-control" id="indexResult" style="text-align: center; width: 100px; ">
+                </div>
+              </div>
+              <br>
+              <div class="row">
+                <div class="col-md-6" >
+                  <button type="button" class="btn btn-primary" onclick="indexOfMethod()">Find Index</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+      <hr style="max-width: 1000px">
+      <br>
+      <!-- End String Method:  indexOf() == -->
+
+      <!-- Begin - String Method toUpperCase() == -->
+      <br>
+      <!-- Column 1 - Description -->
+      <div class="row" style="text-align: left">
+        <div class="col-md-3" >
+          <!-- <h3>Description</h3> -->
+          <br>
+          <h4 style="white-space: pre">Deliverables:</h4>
+          <h4 style="white-space: pre">   String Method: toUpperCase()</h4>
+        </div>
+
+        <!-- Column 2 - Code Section -->
+        <div class="col-md-6" style="text-align: left" >
+         <!--  <h3>Code</h3> -->
+          <br>
+          <pre class="prettyprint linenums" >
+//Convert String to Uppercase
+function toUpperMethod(){
+  var toUpperInput = document.getElementById('toUpperInput').value;
+  var convertInput = toUpperInput.toUpperCase();
+
+  document.getElementById('toUpperResult').value=convertInput;
+}
+          </pre>
+        </div>
+        <!-- Column 3 - Display input section -->
+        <form class="form-horizontal">
+          <div class="form-group">
+            <div class="col-md-3" >
+              <br>
+              <div class="row" >
+                <label for="toUpperInput" class="col-md-6" >String Input:</label>
+                  <div class="col-md-4" >
+                    <input type="input" class="form-control" id="toUpperInput" style="text-align: center; width: 100px">
+                  </div>
+              </div>
+              <div class="row">
+                <label for="toUpperResult" class="col-md-6">Conversion:</label>
+                <div class="col-md-4  ">
+                  <input type="input" class="form-control" id="toUpperResult" style="text-align: center; width: 100px; ">
+                </div>
+              </div>
+              <br>
+              <div class="row">
+                <div class="col-md-6" >
+                  <button type="button" class="btn btn-primary" onclick="toUpperMethod()">Convert Case</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+      <br>
+      <!-- End Copy String Method toUpperCase() == -->
+    </div>
+    <br>
+    <br>
+    <!-- END OF CONTAINER - STRING METHODS == -->
+
+
+    <!-- =================================
+    = BEGIN - ARRAY METHODS              =
+    ================================== -->
+
+    <!-- Begin Array Method concat() == -->
+    <div class="container" style="background-color: #d9d9d9; color: black; border: 10px solid #f05f40 ">
+      <!-- Begin copy - main container ================================= -->
+      <h2 style="text-transform: uppercase">Array Methods</h2>
+      <br>
+      <!-- Column 1 - Description -->
+      <div class="row" style="text-align: left">
+        <div class="col-md-3" >
+          <h3>Description</h3>
+          <br>
+          <h4 style="white-space: pre">Deliverables:</h4>
+          <h4 style="white-space: pre">   Array Methods: concat()</h4>
+        </div>
+
+        <!-- Column 2 - Code Section -->
+        <div class="col-md-6" style="text-align: left" >
+         <h3>Code</h3>
+          <br>
+          <pre class="prettyprint linenums" >
+//Combine Two Arrays
+function concatArray(){
+    var concatArray1 = ["Bill", "Jan"];
+    var concatArray2 = ["Sue", "Tim"];
+    var combined = concatArray1.concat(concatArray2);
+
+  document.getElementById('combinedArray').value=combined;
+}
+          </pre>
+        </div>
+        <!-- Column 3 - Display input section -->
+        <form class="form-horizontal">
+          <div class="form-group">
+            <div class="col-md-3" >
+              <h3>Example</h3>
+              <br>
+              <div class="row" >
+                <label for="indexInput1" class="col-md-12" >Array1: ["Bill", "Jan"]</label>
+              </div>
+              <div class="row" >
+                <label for="indexInput2" class="col-md-12" >Array2: ["Sue", "Tim"]</label>
+              </div>
+               <div class="row" >
+                <label for="indexInput3" class="col-md-12" >Concatenated:</label>
+              </div>
+              <div class="row" >
+                  <div class="col-md-12" >
+                    <input type="input" class="form-control" id="combinedArray" style="text-align: center; width: 200px">
+                  </div>
+              </div>
+              <br>
+              <div class="row">
+                <div class="col-md-6" >
+                  <button type="button" class="btn btn-primary" onclick="concatArray()">Click to Combine</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+      <hr style="max-width: 1000px">
+      <br>
+      <!-- End Array Method concat() == -->
+
+      <!-- Begin - Array Methods - Various == -->
+      <br>
+      <!-- Column 1 - Description -->
+      <div class="row" style="text-align: left">
+        <div class="col-md-3" >
+          <h4 style="text-transform: uppercase">Deliverables:</h4>
+          <h4>&nbsp;&nbsp;Array Methods</h4>
+          <h4>&nbsp;&nbsp;&nbsp;&nbsp;- shift()</h4>
+          <h4>&nbsp;&nbsp;&nbsp;&nbsp- pop()</h4>
+          <h4>&nbsp;&nbsp;&nbsp;&nbsp- unshift()</h4>
+          <h4>&nbsp;&nbsp;&nbsp;&nbsp- push()</h4><br>
+          <h4>&nbsp;&nbsp;Loops & Conditionals</h4>
+          <h4>&nbsp;&nbsp;&nbsp;&nbsp- "for"</h4>
+          <h4>&nbsp;&nbsp;&nbsp;&nbsp- "if" </h4><br>
+          <h4>&nbsp;&nbsp;Events</h4>
+          <h4>&nbsp;&nbsp;&nbsp;&nbsp- onmouseover</h4>
+          <h4>&nbsp;&nbsp;&nbsp;&nbsp- onmouseout</h4>
+          <h4>&nbsp;&nbsp;&nbsp;&nbsp- onkeydown</h4><br>
+          <h4>&nbsp;&nbsp;Additional (not required)</h4>
+          <h4>&nbsp;&nbsp;&nbsp;&nbsp- Math.random()</h4>
+          <h4>&nbsp;&nbsp;&nbsp;&nbsp- Math.floor()</h4>
+        </div>
+        <!-- Column 2 - Code Section -->
+        <div class="col-md-5" style="text-align: left" >
+         <!--  <h3>Code</h3> -->
+          <br>
+          <pre class="prettyprint linenums" >
+//Various array methods using random number array
+function randomArray(){
+    var numArray = [];
+    var firstNumTemp;
+    var lastNumTemp;
+
+    //Initialize array - random numbers 1 to 100
+    for (var i=0; i<5; i++){
+       numArray[i] = Math.floor((Math.random() * 100)+1);
+    }
+
+    //Write initial array to page
+    document.getElementById('randomNumArray').value=numArray;
+
+    //Peel off first and last array elements
+    firstNumTemp = numArray.shift();
+    lastNumTemp = numArray.pop();
+
+    //Write elements and subset to page
+    document.getElementById('firstArrayNum').value=firstNumTemp;
+    document.getElementById('lastArrayNum').value=lastNumTemp;
+    document.getElementById('subsetArray').value=numArray;
+
+    //Add first and last elements back - reverse order
+    numArray.unshift(lastNumTemp);
+    numArray.push(firstNumTemp);
+
+    //Write updated array
+    document.getElementById('updatedArray').value=numArray;
+}
+
+//Disable "Mouse Over" on "Mouse Out"
+function disableButton(){
+    document.getElementById('arrayMouseOverButton').disabled=true;
+    document.getElementById('arrayReset').focus();  //Assign focus to resetElements
+}
+
+//Reset elements on "r" press
+function resetElements(event){
+    if (event.which == 82){
+      document.getElementById('randomNumArray').value="";
+      document.getElementById('firstArrayNum').value="";
+      document.getElementById('lastArrayNum').value="";
+      document.getElementById('subsetArray').value="";
+      document.getElementById('updatedArray').value="";
+      document.getElementById('arrayMouseOverButton').disabled=false;
+    }
+}
+          </pre>
+        </div>
+        <!-- Column 3 - Display input section -->
+        <form class="form-horizontal">
+          <div class="form-group">
+            <div class="col-md-3" >
+              <br>
+              <div class="row" >
+                <label for="randomNumArray" class="col-md-7" >Random Array:</label>
+                  <div class="col-md-5" >
+                    <input type="input" class="form-control" id="randomNumArray" style="text-align: center; width: 150px">
+                  </div>
+              </div>
+              <div class="row" >
+                <label for="firstArrayNum" class="col-md-7" >First Element:</label>
+                  <div class="col-md-5" >
+                    <input type="input" class="form-control" id="firstArrayNum" style="text-align: center; width: 150px">
+                  </div>
+              </div>
+              <div class="row" >
+                <label for="subsetArray" class="col-md-7" >Middle Elements:</label>
+                  <div class="col-md-5" >
+                    <input type="input" class="form-control" id="subsetArray" style="text-align: center; width: 150px">
+                  </div>
+              </div>
+              <div class="row" >
+                <label for="lastArrayNum" class="col-md-7" >Last Element:</label>
+                  <div class="col-md-5" >
+                    <input type="input" class="form-control" id="lastArrayNum" style="text-align: center; width: 150px">
+                  </div>
+              </div>
+              <div class="row" >
+                <label for="updatedArray" class="col-md-7" >Update First/Last:</label>
+                  <div class="col-md-5" >
+                    <input type="input" class="form-control" id="updatedArray" style="text-align: center; width: 150px">
+                  </div>
+              </div>
+              <br><br>
+              <div class="row">
+                <div class="col-md-6" >
+                  <button type="button" class="btn btn-primary" id="arrayMouseOverButton" onmouseover="randomArray()" onmouseout="disableButton()">"Mouse Over"</button>
+                </div>
+              </div>
+              <br><br>
+              <div class="row">
+                <div class="col-md-6" >
+                  <button type="button" class="btn btn-primary" id="arrayReset" onkeydown="resetElements(event)" style="text-transform: none">Press "r" to Reset</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+      <br>
+      <!-- End Array Various == -->
+    </div>
+    <br>
+    <br>
+<!-- END OF CONTAINER - ARRAY METHODS == -->
+
+
+    <!-- =================================
+    = BEGIN - OBJECTS                    =
+    ================================== -->
+
+    <!-- Begin - Cycle Object Properties == -->
+    <div class="container" style="background-color: #d9d9d9; color: black; border: 10px solid #f05f40 ">
+      <!-- Begin copy - main container ===================================================== -->
+      <h2 style="text-transform: uppercase">Objects</h2>
+      <!-- Begin - Copy =============================================================== -->
+      <br>
+      <!-- Column 1 - Description -->
+      <div class="row" style="text-align: left">
+        <div class="col-md-3" >
+          <h3>Description</h3>
+          <br>
+          <h4 style="white-space: pre">Deliverables:</h4>
+          <h4 style="white-space: pre">&nbsp;&nbsp;Cycle Object & Print Properties</h4>
+          <h4 style="white-space: pre">&nbsp;&nbsp;- 2<sup>nd</sup> 'for' Loop</h4>
+        </div>
+        <!-- Column 2 - Code Section -->
+        <div class="col-md-6" style="text-align: left" >
+         <h3>Code</h3>
+          <br>
+          <pre class="prettyprint linenums" >
+//Search friends object
+function findAvailableFriends(){
+    var available="";  //empty string to store friend names
+
+    //Create objects
+    var friends = {};
+
+    friends.bill = {
+        firstName: "Bill",
+        lastName: "Williams",
+        number: "(555) 555-5555",
+        street: "123 Anywhere St",
+        city: "SomeCity",
+        state: "WA",
+        zip: "11111"
+    };
+        friends.john = {
+        firstName: "John",
+        lastName: "Doe",
+        number: "(222) 222-2222",
+        street: "456 Lost Rd",
+        city: "Somewhere",
+        state: "CA",
+        zip: "222222"
+    };
+        friends.sue = {
+        firstName: "Sue",
+        lastName: "Jones",
+        number: "(333) 333-3333",
+        street: "Under The Bridge",
+        city: "Poor Town",
+        state: "FL",
+        zip: "33333"
+    };
+
+    //Iterate friends object building 'available' string
+    var commaCount = 0;
+    for(var friend in friends) {
+        available += friends[friend].firstName;
+
+        //Add comma delimiters to 'avaiable' string
+        //Cannot use 'length' on object - undefined
+        if (commaCount < 2){
+            available += ", ";
+            commaCount++;
+        }
+    }
+    //Write 'available' friend string to page
+    document.getElementById('availableFriends').value=available;
+}
+
+//Reset friends search
+function resetAvailableFriends(){
+    document.getElementById('availableFriends').value="";
+}
+          </pre>
+        </div>
+        <!-- Column 3 - Display input section -->
+        <form class="form-horizontal">
+          <div class="form-group">
+            <div class="col-md-3" >
+              <h3>Example</h3>
+              <br>
+              <div class="row" >
+                <div class="col-md-12 ">
+                <P style="text-align-right">You and a guest are invited to a party on July <sup>4th</sup>. Who would you like to invite? Click "Search" to find available friends.</p>
+                </div>
+             </div>
+              <div class="row" >
+                 <div class="col-md-8 ">
+                  <input type="input" class="form-control" id="availableFriends" style="text-align: center; width: 135px; ">
+                </div>
+              </div><br>
+              <div class="row"  >
+                <div class="col-md-12" >
+                  <button type="button" class="btn btn-primary" onclick="findAvailableFriends()">Search</button>
+                  <button type="button" class="btn btn-primary" onclick="resetAvailableFriends()">Reset</button>
+                </div>
+              </div>
+            </div>
+           </div>
+        </form>
+      </div>
+      <hr style="max-width: 1000px">
+      <br>
+      <!-- End Cycle Object Properties == -->
+
+
+      <!-- Begin - Search Object Properties == -->
+      <br>
+      <!-- Column 1 - Description -->
+      <div class="row" style="text-align: left">
+        <div class="col-md-3" >
+          <!-- <h3>Description</h3> -->
+          <br>
+          <h4 style="white-space: pre">Deliverables:</h4>
+          <h4 style="white-space: pre">  - Search Object Properties</h4>
+          <h4 style="white-space: pre">  - Another 'for' & 'if'</h4>
+          <h4 style="white-space: pre">  - String Method: toLowerCase()</h4>
+        </div>
+        <!-- Column 2 - Code Section -->
+        <div class="col-md-6" style="text-align: left" >
+         <!--  <h3>Code</h3> -->
+          <br>
+          <pre class="prettyprint linenums" >
+//Search friends object
+function searchFriendsAddress(){
+    //Create objects
+    var friends = {};
+
+    friends.bill = {
+        firstName: "Bill",
+        lastName: "Williams",
+        number: "(555) 555-5555",
+        street: "123 Anywhere St",
+        city: "SomeCity",
+        state: "WA",
+        zip: "11111"
+    };
+        friends.john = {
+        firstName: "John",
+        lastName: "Doe",
+        number: "(222) 222-2222",
+        street: "456 Lost Rd",
+        city: "Somewhere",
+        state: "CA",
+        zip: "222222"
+    };
+        friends.sue = {
+        firstName: "Sue",
+        lastName: "Jones",
+        number: "(333) 333-3333",
+        street: "Under The Bridge",
+        city: "Poor Town",
+        state: "FL",
+        zip: "33333"
+    };
+
+    //Retrieve input and convert to lower case
+    var name = document.getElementById('inviteFriend').value.toLowerCase();
+
+    //Iterate through friends object searching for 'name'
+    for(var friend in friends) {
+      if(friends[friend].firstName.toLowerCase() === name) {
+        //Write address to page
+        document.getElementById('friendStreet').value=friends[friend].street;
+        document.getElementById('friendCity').value=friends[friend].city;
+        document.getElementById('friendState').value=friends[friend].state;
+        document.getElementById('friendZip').value=friends[friend].zip;
+      }
+    }
+}
+
+//Reset address fields
+function resetSearchFriendsAddress(){
+    document.getElementById('inviteFriend').value="";
+    document.getElementById('friendStreet').value="";
+    document.getElementById('friendCity').value="";
+    document.getElementById('friendState').value="";
+    document.getElementById('friendZip').value="";
+}
+          </pre>
+        </div>
+        <!-- Column 3 - Display input section -->
+        <form class="form-horizontal">
+          <div class="form-group">
+            <div class="col-md-3" >
+              <br>
+              <div class="row" >
+                <div class="col-md-12 ">
+                <P style="text-align-right">Who would you like to invite to the party:  Bill, Sue, or John?</p>
+                </div>
+             </div>
+              <div class="row" >
+                 <div class="col-md-5 ">
+                  <input type="input" class="form-control" id="inviteFriend" style="text-align: center; width: 110px; ">
+                </div>
+                <div class="col-md-7" >
+                  <button type="button" class="btn btn-primary" onclick="searchFriendsAddress()">Find Address</button>
+                </div>
+              </div><br>
+              <div class="row" >
+                <label for="friendStreet" class="col-md-3" >Street:</label>
+                  <div class="col-md-9" >
+                    <input type="input" class="form-control" id="friendStreet" style="width: 150px">
+                  </div>
+              </div>
+              <div class="row" >
+                <label for="friendCity" class="col-md-3" >City:</label>
+                  <div class="col-md-9" >
+                    <input type="input" class="form-control" id="friendCity" style="width: 150px">
+                  </div>
+              </div>
+              <div class="row" >
+                <label for="friendState" class="col-md-3" >state:</label>
+                  <div class="col-md-9" >
+                    <input type="input" class="form-control" id="friendState" style="width: 150px">
+                  </div>
+              </div>
+              <div class="row" >
+                <label for="friendZip" class="col-md-3" >Zip:</label>
+                  <div class="col-md-9" >
+                    <input type="input" class="form-control" id="friendZip" style="width: 150px">
+                  </div>
+              </div>
+              <div class="row">
+              <br>
+                <div class="col-md-12" style="text-align: center">
+                  <button type="button" class="btn btn-primary" onclick="resetSearchFriendsAddress()">Reset</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+      <br>
+      <!-- END - OBJECTS == -->
+    </div>
+    <!-- End of container -->
+    <br><br>  <!-- spacer -->
+
+
+    <!-- =================================
+    = BEGIN - CONDITIONALS               =
+    ================================== -->
+
+    <div class="container" style="background-color: #d9d9d9; color: black; border: 10px solid #f05f40 ">
+      <h2 style="text-transform: uppercase">Conditionals</h2>
+
+      <!-- Begin - if / else if / else == -->
+      <br>
+      <!-- Column 1 - Description -->
+      <div class="row" style="text-align: left">
+        <div class="col-md-3" >
+          <h3>Description</h3>
+          <br>
+          <h4 style="white-space: pre">Deliverables:</h4>
+          <h4 style="white-space: pre">   if / else if / else</h4>
+        </div>
+        <!-- Column 2 - Code Section -->
+        <div class="col-md-6" style="text-align: left" >
+         <h3>Code</h3>
+          <br>
+          <pre class="prettyprint linenums" >
+//Categorize number 1-100
+function pickNumber(){
+    var number = document.getElementById('pickNumInput').value;
+    var result;
+
+    if(number<=0 || number>100){
+        alert("Invalid number!");
+        resetPickNumber();
+        return;
+    } else if (number<=25){
+        result = "<=25";
+    } else if(number<=50){
+        result = ">25 & <=50";
+    } else if(number<=75){
+        result = ">50 & <=75";
+    } else {
+        result = ">75 & <=100";
+    }
+    document.getElementById('pickNumResult').value=result;
+}
+
+//Reset pickNumber
+function resetPickNumber(){
+    document.getElementById('pickNumInput').value = "";
+    document.getElementById('pickNumResult').value ="";
+}
+          </pre>
+        </div>
+        <!-- Column 3 - Display input section -->
+        <form class="form-horizontal">
+          <div class="form-group">
+            <div class="col-md-3" >
+              <h3>Example</h3>
+              <br>
+              <div class="row">
+                <p class="col-md-12">Select Number >0 & <=100:</p>
+              </div>
+              <div class="row">
+                <label for="pickNumInput" class="col-md-6">Your Number:</label>
+                <div class="col-md-6  ">
+                  <input type="input" class="form-control" id="pickNumInput" style="text-align: center; width: 115px; ">
+                </div>
+              </div>
+              <div class="row">
+                <label for="pickNumResult" class="col-md-6">Number Group:</label>
+                <div class="col-md-6  ">
+                  <input type="input" class="form-control" id="pickNumResult" style="text-align: center; width: 115px; ">
+                </div>
+              </div>
+              <br>
+              <div class="row" style="text-align: center">
+                <div class="col-md-12" >
+                  <button type="button" class="btn btn-primary" onclick="pickNumber()">Submit</button>
+                  <button type="button" class="btn btn-primary" onclick="resetPickNumber()">Reset</button>
+                </div>
+              </div>
+              <br>
+           </div>
+         </div>
+        </form>
+      </div>
+      <hr style="max-width: 1000px">
+      <br>
+      <!-- End - if/else if/else == -->
+
+      <!-- Begin - Switch/Case == -->
+      <br>
+      <!-- Column 1 - Description -->
+      <div class="row" style="text-align: left">
+        <div class="col-md-3" >
+          <!-- <h3>Description</h3> -->
+          <br>
+          <h4 style="white-space: pre">Deliverables:</h4>
+          <h4 style="white-space: pre">  switch()</h4>
+        </div>
+        <!-- Column 2 - Code Section -->
+        <div class="col-md-6" style="text-align: left" >
+         <!--  <h3>Code</h3> -->
+          <br>
+          <pre class="prettyprint linenums" >
+function fruitPrice(){
+  var fruit = document.getElementById('pickFruit').value;
+  var price;
+
+    switch (fruit) {
+      case "Oranges":
+        price = "$0.59 a pound";
+        break;
+      case "Apples":
+        price = "$0.32 a pound";
+        break;
+      case "Bananas":
+        price = "$0.48 a pound";
+        break;
+      case "Cherries":
+        price = "$3.00 a pound";
+        break;
+      case "Papayas":
+        price = "$2.79 a pound";
+        break;
+      default:
+        price = "-Out of Stock-";
+    }
+    document.getElementById('fruitPriceResult').value=price;
+}
+
+//Reset pickNumber
+function resetFruitPrice(){
+    document.getElementById('pickFruit').value = "";
+    document.getElementById('fruitPriceResult').value="";
+}
+          </pre>
+        </div>
+        <!-- Column 3 - Display input section -->
+        <form class="form-horizontal">
+          <div class="form-group">
+            <div class="col-md-3" >
+              <br>
+              <div class="row">
+                <p class="col-md-12">Find Fruit Price</p>
+              </div>
+              <div class="row">
+                <label for="pickFruit" class="col-md-4">Fruit:</label>
+                <div class="col-md-8  ">
+                  <input type="input" class="form-control" id="pickFruit" style="text-align: center; width: 130px; ">
+                </div>
+              </div>
+              <div class="row">
+                <label for="fruitPriceResult" class="col-md-4">Price:</label>
+                <div class="col-md-8  ">
+                  <input type="input" class="form-control" id="fruitPriceResult" style="text-align: center; width: 130px; ">
+                </div>
+              </div>
+              <br>
+              <div class="row" style="text-align: center">
+                <div class="col-md-12" >
+                  <button type="button" class="btn btn-primary" onclick="fruitPrice()">Submit</button>
+                  <button type="button" class="btn btn-primary" onclick="resetFruitPrice()">Reset</button>
+                </div>
+              </div>
+              <br>
+           </div>
+         </div>
+        </form>
+      </div>
+      <hr style="max-width: 1000px">
+      <br>
+      <!-- End - Switch/Case == -->
+
+      <!-- Begin - Fall-Through Switch == -->
+      <br>
+      <!-- Column 1 - Description -->
+      <div class="row" style="text-align: left">
+        <div class="col-md-3" >
+          <!-- <h3>Description</h3> -->
+          <br>
+          <h4 style="white-space: pre">Deliverables:</h4>
+          <h4 style="white-space: pre">   fall-through switch()</h4>
+        </div>
+        <!-- Column 2 - Code Section -->
+        <div class="col-md-6" style="text-align: left" >
+         <!--  <h3>Code</h3> -->
+          <br>
+          <pre class="prettyprint linenums" >
+function selectDay(){
+  var selectDayInput = document.getElementById('dayOfWeek').value;
+
+  switch (selectDayInput) {
+      case 'Mon':
+      case 'Tue':
+      case 'Wed':
+      case 'Thu':
+      case 'Fri':
+          response = "Weekends are better";
+          break;
+      case  'Sat':
+      case  'Sun':
+         response = "It's the weekend!";
+          break;
+      default:
+        response = 'Invalid selection';
+  }
+  document.getElementById('dayOfWeekResponse').value=response;
+}
+
+//Reset
+function resetSelectDay(){
+
+  document.getElementById('dayOfWeek').value="";
+  document.getElementById('dayOfWeekResponse').value="";
+
+}
+          </pre>
+        </div>
+        <!-- Column 3 - Display input section -->
+        <form class="form-horizontal">
+          <div class="form-group">
+            <div class="col-md-3" >
+             <!--  <h3>Example</h3> -->
+              <br>
+              <div class="row" >
+                <P class="col-md-12">What day is it (e.g. Sun, Mon, Tue, Wed, Thu, Fri, Sat)?</P>
+              </div>
+              <div class="row" >
+                <label for="dayOfWeek" class="col-md-2" >Day:</label>
+                  <div class="col-md-4" >
+                    <input type="input" class="form-control" id="dayOfWeek" style="text-align: center; width: 75px">
+                  </div>
+                <div class="col-md-6" >
+                  <button type="button" class="btn btn-primary" onclick="selectDay()">Submit</button>
+                </div>
+              </div>
+              <br>
+              <div class="row" style="text-align: center" >
+                <div class="col-md-11" >
+                 <input type="input" class="form-control" id="dayOfWeekResponse" style="text-align: center; width: 225px">
+               </div>
+              </div><br>
+              <div class="row">
+                <div class="col-md-6" >
+                  <button type="button" class="btn btn-primary" onclick="resetSelectDay()">Reset</button>
+                </div>
+              </div><br>
+            </div>
+          </div>
+        </form>
+      </div>
+      <br>
+      <!-- End - Fall-Through Switch == -->
+    </div>
+    <br><br>
+    <!-- End of container - Above ==-->
+
+
+    <!-- =================================
+    = BEGIN - LOOPS                      =
+    ================================== -->
+
+    <div class="container" style="background-color: #d9d9d9; color: black; border: 10px solid #f05f40 ">
+      <h2 style="text-transform: uppercase">Loops & Exponentiation</h2>
+
+      <!-- Begin - while / do while / exponentiation == -->
+      <br>
+      <!-- Column 1 - Description -->
+      <div class="row" style="text-align: left">
+        <div class="col-md-2" >
+          <h3>Description</h3>
+          <br>
+          <h4 style="white-space: pre">Deliverables:</h4>
+          <h4 style="white-space: pre">  - 2 while loops</h4>
+          <h4 style="white-space: pre">  - 2  do while loops</h4>
+          <h4 style="white-space: pre">  - exponentiation</h4>
+        </div>
+        <!-- Column 2 - Code Section -->
+        <div class="col-md-6" style="text-align: left" >
+         <h3>Code</h3>
+          <br>
+          <pre class="prettyprint linenums" >
+//Loops:  while & do while
+function loopExamples(){
+   var thinkCount = 0;
+   var thinkString = "";
+   var boolFlag = true;
+
+   //Executes three times using counter
+   //Note: building string w/EOL breaks - not shown by highlighter
+   while(thinkCount < 3){
+     thinkString += "Thinking...(inside 1<sup>st</sup> 'while')<br>";
+     thinkCount++;
+   }
+   document.getElementById('whileId1').innerHTML=thinkString;
+
+   //Executes once - thinkCount == 3
+   do{
+     document.getElementById('doWhileId1').innerHTML="Still thinking...(inside 1<sup>st</sup> 'do while')";
+   }while(thinkCount == 0);
+
+   //Executes once while boolFlag == true
+   while(boolFlag){
+     document.getElementById('whileId2').innerHTML="Hmmmmm..(inside 2<sup>nd</sup> 'while')";
+     boolFlag = false;
+   }
+
+   //Executes once - boolFlag currently set to 'false'
+   do{
+     document.getElementById('doWhileId2').innerHTML="Almost there...(inside 2<sup>nd</sup> 'do while')...";
+   }while(boolFlag);   //Evaluating for 'true'
+
+   //No evidence that JS supports operator '**'
+   var calcAnswer = Math.pow(5,4);
+   document.getElementById('expAnswer').innerHTML="Answer:  5**4 = " + calcAnswer;
+}
+
+//Reset loop examples
+function resetLoopExamples(){
+
+    document.getElementById('whileId1').innerHTML="";
+    document.getElementById('doWhileId1').innerHTML="";
+    document.getElementById('whileId2').innerHTML="";
+    document.getElementById('doWhileId2').innerHTML="";
+    document.getElementById('expAnswer').innerHTML="";
+}
+          </pre>
+        </div>
+        <!-- Column 3 - Display input section -->
+        <form class="form-horizontal">
+          <div class="form-group">
+            <div class="col-md-4" >
+             <h3>Example</h3>
+              <br>
+              <div class="row" >
+                <div class="col-md-12" >
+                  <h4>What is 5 to the power of 4 (5*5*5*5)?</h4>
+                </div>
+              </div>
+              <div class="row" >
+                <div class="col-md-3" >
+                  <button type="button" class="btn btn-primary" onclick="loopExamples()">Submit</button>
+                </div>
+                <div class="col-md-3" >
+                  <button type="button" class="btn btn-primary" onclick="resetLoopExamples()">Reset</button>
+                </div>
+              </div><br>
+              <div class="row" >
+                <div class="col-md-12" >
+                  <p id="whileId1"></p>
+                </div>
+              </div>
+              <div class="row" >
+                <div class="col-md-12" >
+                  <p id="doWhileId1"></p>
+                </div>
+              </div>
+              <div class="row" >
+                <div class="col-md-12" >
+                  <p id="whileId2"></p>
+                </div>
+              </div>
+              <div class="row" >
+                <div class="col-md-12" >
+                  <p id="doWhileId2"></p>
+                </div>
+              </div>
+              <div class="row" >
+                <div class="col-md-12" >
+                  <p id="expAnswer"></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+      <br>
+      <!-- End - Loops == -->
+    </div>
+    <!-- End of container - Above ==-->
+  </div>
+</section>
+
+        <!-- jQuery -->
+    <script src="../js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="../js/bootstrap.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="../js/scrollreveal.min.js"></script>
+    <script src="../js/jquery.easing.min.js"></script>
+    <script src="../js/jquery.fittext.js"></script>
+    <script src="../js/jquery.magnific-popup.min.js"></script>
+
+    <!-- Custom Theme JavaScript -->
+    <script src="../js/creative.js"></script>
+
+    <!-- TB Personal JavaScript -->
+    <script src="../js/portExamplesJS.js"></script>
+
+</body>
+
+</html>
